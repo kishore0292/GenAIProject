@@ -1,44 +1,36 @@
+using NUnit.Framework;
+
 namespace GenAIProject.StepDefinitions
 {
     [Binding]
     public sealed class CalculatorStepDefinitions
     {
-        // For additional details on SpecFlow step definitions see https://go.specflow.org/doc-stepdef
+        private static int A;
+        private static int B;
+        private static int C;
 
         [Given("the first number is (.*)")]
-        public void GivenTheFirstNumberIs(int number)
+        public void GivenTheFirstNumberIs(int a)
         {
-            //TODO: implement arrange (precondition) logic
-            // For storing and retrieving scenario-specific data see https://go.specflow.org/doc-sharingdata
-            // To use the multiline text or the table argument of the scenario,
-            // additional string/Table parameters can be defined on the step definition
-            // method. 
-
-            throw new PendingStepException();
+            A = a;
         }
 
         [Given("the second number is (.*)")]
-        public void GivenTheSecondNumberIs(int number)
+        public void GivenTheSecondNumberIs(int b)
         {
-            //TODO: implement arrange (precondition) logic
-
-            throw new PendingStepException();
+            B = b;
         }
 
         [When("the two numbers are added")]
         public void WhenTheTwoNumbersAreAdded()
         {
-            //TODO: implement act (action) logic
-
-            throw new PendingStepException();
+            C = A + B;
         }
 
         [Then("the result should be (.*)")]
         public void ThenTheResultShouldBe(int result)
         {
-            //TODO: implement assert (verification) logic
-
-            throw new PendingStepException();
+            Assert.That(result.Equals(C));
         }
     }
 }
